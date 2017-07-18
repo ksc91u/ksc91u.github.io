@@ -16,4 +16,6 @@ project pages 才會去找 gh-pages branch, 這樣網址就要變成  https://us
 
 試試看在 develop 寫文章, publish 到 gh-pages 之後, master merge gh-pages 然後再 push 一次看看。
 
+$e=mc^2$
+
 在找到解法之前先這樣。
