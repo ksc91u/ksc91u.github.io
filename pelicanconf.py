@@ -21,10 +21,9 @@ AUTHOR_FEED_RSS = None
 DISQUS_SITENAME = u"ksc91u"
 
 # Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
+LINKS = (('通通寫成一行', 'https://ingramchen.io'),
+         ('隨便聊天', 'https://kaif.io/'),
+	('用Pelican架個人Blog','http://blog.runsheng.xyz/shi-yong-pelicanda-jian-ji-yu-gitde-jing-tai-bo-ke.html'))
 
 # Social widget
 SOCIAL = (('You can add links in your config file', '#'),
