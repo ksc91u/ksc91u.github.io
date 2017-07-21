@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>我不會Java - i18n</title><link href="https://ksc91u.github.io/" rel="alternate"></link><link href="https://ksc91u.github.io/feeds/i18n.atom.xml" rel="self"></link><id>https://ksc91u.github.io/</id><updated>2017-07-21T13:00:00+08:00</updated><entry><title>OneSky Sucks</title><link href="https://ksc91u.github.io/onesky.html" rel="alternate"></link><published>2017-07-21T13:00:00+08:00</published><updated>2017-07-21T13:00:00+08:00</updated><author><name>Me</name></author><id>tag:ksc91u.github.io,2017-07-21:/onesky.html</id><summary type="html">&lt;p&gt;OneSky CDATA 的一堆雷&lt;/p&gt;</summary><content type="html">&lt;p&gt;OneSky 真雷&lt;/p&gt;
+&lt;p&gt;上面的字串&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;font&lt;/span&gt; &lt;span class="na"&gt;color=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;#F06354&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;*&lt;span class="nt"&gt;&amp;lt;/font&amp;gt;&lt;/span&gt; 為必填欄位
+姓名 &lt;span class="nt"&gt;&amp;lt;font&lt;/span&gt; &lt;span class="na"&gt;color=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;#F06354&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;*&lt;span class="nt"&gt;&amp;lt;/font&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;下載格式選Android Xml , 很聰明, 自動幫我加CDATA&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ni"&gt;&amp;amp;lt;&lt;/span&gt;font color=\&amp;quot;#F06354\&amp;quot;&lt;span class="ni"&gt;&amp;amp;gt;&lt;/span&gt;*&lt;span class="ni"&gt;&amp;amp;lt;&lt;/span&gt;/font&lt;span class="ni"&gt;&amp;amp;gt;&lt;/span&gt; 為必填欄位
+&lt;span class="cp"&gt;&amp;lt;![CDATA[姓名 &amp;lt;font color=&amp;quot;#F06354&amp;quot;&amp;gt;*&amp;lt;/font&amp;gt;]]&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;馬的為什麼第一個字串就不會加。&lt;/p&gt;
+&lt;p&gt;一開始看到這個想說, 好, 那所有有html 的我都手動加上 CDATA 好了吧, 結果...&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;We've encountered a problem when generating the file. Our engineering team will look into the issue and get back to you soon!&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://support.oneskyapp.com/hc/en-us/articles/115001927147-I-cannot-export-my-file-from-OneSky"&gt;可能的原因1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://support.oneskyapp.com/hc/en-us/articles/222717448-Common-import-export-issues"&gt;也可能是這樣&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;但是 Sorry~ 錯誤訊息不會告訴你&lt;/p&gt;
+&lt;p&gt;我是剛好可以下載 xliff xml 格式, 之後丟上去 &lt;a href="https://localise.biz/free/converter/ios-to-android"&gt;這裏&lt;/a&gt; 他才告訴我說哪一行錯了, 才發現&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;你手動加了CDATA, OneSky 又幫你加一次, 然後就說錯了不讓你下載了&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;結論&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;OneSky 會自動幫你加 CDATA&lt;/li&gt;
+&lt;li&gt;但是有的該加的不加&lt;/li&gt;
+&lt;li&gt;不該加的幫你加了 &lt;/li&gt;
+&lt;li&gt;錯了不會告訴你原因&lt;/li&gt;
+&lt;/ol&gt;</content><category term="onesky"></category></entry></feed>

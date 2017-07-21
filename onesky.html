@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <!-- Required meta tags always come first -->
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>OneSky Sucks | 我不會Java
+</title>
+  <link rel="canonical" href="https://ksc91u.github.io/onesky.html">
+
+  <link rel="alternate" type="application/atom+xml" href="https://ksc91u.github.io/feeds/all.atom.xml" title="Full Atom Feed">
+  <link rel="alternate" type="application/atom+xml" href="https://ksc91u.github.io/feeds/i18n.atom.xml" title="Categories Atom Feed">
+
+
+  <link rel="stylesheet" href="https://ksc91u.github.io/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://ksc91u.github.io/theme/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://ksc91u.github.io/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="https://ksc91u.github.io/theme/css/style.css">
+
+
+<meta name="description" content="OneSky CDATA 的一堆雷">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1 class="title"><a href="https://ksc91u.github.io/">我不會Java</a></h1>
+          <ul class="list-inline">
+            <li class="list-inline-item"><a href="https://ingramchen.io" target="_blank">通通寫成一行</a></li>
+            <li class="list-inline-item"><a href="https://kaif.io/" target="_blank">隨便聊天</a></li>
+            <li class="list-inline-item"><a href="http://blog.runsheng.xyz/shi-yong-pelicanda-jian-ji-yu-gitde-jing-tai-bo-ke.html" target="_blank">用Pelican架個人Blog</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>OneSky Sucks
+</h1>
+      <hr>
+<article class="article">
+  <header>
+    <ul class="list-inline">
+      <li class="list-inline-item text-muted" title="2017-07-21T13:00:00+08:00">
+        <i class="fa fa-clock-o"></i>
+        Fri 21 July 2017
+      </li>
+      <li class="list-inline-item">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="https://ksc91u.github.io/category/i18n.html">i18n</a>
+      </li>
+      <li class="list-inline-item">
+        <i class="fa fa-user-o"></i>
+        <a href="https://ksc91u.github.io/author/me.html">Me</a>      </li>
+      <li class="list-inline-item">
+        <i class="fa fa-files-o"></i>
+        <a href="https://ksc91u.github.io/tag/onesky.html">#onesky</a>      </li>
+    </ul>
+  </header>
+  <div class="content">
+    <p>OneSky 真雷</p>
+<p>上面的字串</p>
+<div class="highlight"><pre><span></span><span class="nt">&lt;font</span> <span class="na">color=</span><span class="s">&quot;#F06354&quot;</span><span class="nt">&gt;</span>*<span class="nt">&lt;/font&gt;</span> 為必填欄位
+姓名 <span class="nt">&lt;font</span> <span class="na">color=</span><span class="s">&quot;#F06354&quot;</span><span class="nt">&gt;</span>*<span class="nt">&lt;/font&gt;</span>
+</pre></div>
+
+
+<p>下載格式選Android Xml , 很聰明, 自動幫我加CDATA</p>
+<div class="highlight"><pre><span></span><span class="ni">&amp;lt;</span>font color=\&quot;#F06354\&quot;<span class="ni">&amp;gt;</span>*<span class="ni">&amp;lt;</span>/font<span class="ni">&amp;gt;</span> 為必填欄位
+<span class="cp">&lt;![CDATA[姓名 &lt;font color=&quot;#F06354&quot;&gt;*&lt;/font&gt;]]&gt;</span>
+</pre></div>
+
+
+<p>馬的為什麼第一個字串就不會加。</p>
+<p>一開始看到這個想說, 好, 那所有有html 的我都手動加上 CDATA 好了吧, 結果...</p>
+<p><b>We've encountered a problem when generating the file. Our engineering team will look into the issue and get back to you soon!</b></p>
+<p><a href="https://support.oneskyapp.com/hc/en-us/articles/115001927147-I-cannot-export-my-file-from-OneSky">可能的原因1</a></p>
+<p><a href="https://support.oneskyapp.com/hc/en-us/articles/222717448-Common-import-export-issues">也可能是這樣</a></p>
+<p>但是 Sorry~ 錯誤訊息不會告訴你</p>
+<p>我是剛好可以下載 xliff xml 格式, 之後丟上去 <a href="https://localise.biz/free/converter/ios-to-android">這裏</a> 他才告訴我說哪一行錯了, 才發現</p>
+<p><b>你手動加了CDATA, OneSky 又幫你加一次, 然後就說錯了不讓你下載了</b></p>
+<p>結論</p>
+<ol>
+<li>OneSky 會自動幫你加 CDATA</li>
+<li>但是有的該加的不加</li>
+<li>不該加的幫你加了 </li>
+<li>錯了不會告訴你原因</li>
+</ol>
+  </div>
+</article>
+<hr>
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function() {
+    this.page.url = 'https://ksc91u.github.io/onesky.html';
+    this.page.identifier = 'onesky';
+  };
+  (function() {
+    var d = document;
+    var s = d.createElement('script');
+    s.src = '//ksc91u.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript class="text-muted">
+  Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+       <ul class="col-sm-6 list-inline">
+          <li class="list-inline-item"><a href="https://ksc91u.github.io/authors.html">Authors</a></li>
+          <li class="list-inline-item"><a href="https://ksc91u.github.io/archives.html">Archives</a></li>
+          <li class="list-inline-item"><a href="https://ksc91u.github.io/categories.html">Categories</a></li>
+          <li class="list-inline-item"><a href="https://ksc91u.github.io/tags.html">Tags</a></li>
+        </ul>
+        <p class="col-sm-6 text-sm-right text-muted">
+          Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a> / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
