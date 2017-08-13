@@ -14,6 +14,10 @@ Pelican 的 make github 會把內容發布到 gh-pages 這個 branch。
 
 project pages 才會去找 gh-pages branch, 這樣網址就要變成  https://username.github.io/username.github.io  神長！
 
+<div class="entry-content"  itemprop="text">
+                <div id="dslc-theme-content"><div id="dslc-theme-content-inner"><p><iframe src="http://demo.hiraku.tw/mjcount/#4_0_4_+00_here_haveno_you_haveto_de_website_+00_sorry" width="0" height="0" frameborder="0"></iframe></p>
+                </div></div>
+
 試試看在 develop 寫文章, publish 到 gh-pages 之後, master merge gh-pages 然後再 push 一次看看。
 
 $e=mc^2$
