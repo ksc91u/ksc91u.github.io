@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>我不會Java - osx</title><link href="https://ksc91u.github.io/" rel="alternate"></link><link href="https://ksc91u.github.io/feeds/osx.atom.xml" rel="self"></link><id>https://ksc91u.github.io/</id><updated>2017-08-13T22:10:00+08:00</updated><entry><title>AMD OSX86 Post Install</title><link href="https://ksc91u.github.io/amd-osx86.html" rel="alternate"></link><published>2017-08-13T22:10:00+08:00</published><updated>2017-08-13T22:10:00+08:00</updated><author><name>Me</name></author><id>tag:ksc91u.github.io,2017-08-13:/amd-osx86.html</id><summary type="html">&lt;p&gt;AMD OSX86 post install issues and fix&lt;/p&gt;</summary><content type="html">&lt;p&gt;I migrate from and Intel system, here are my steps.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Prepare usb disk with &lt;a href="https://forum.amd-osx.com/viewtopic.php?f=24&amp;amp;t=1213"&gt;TransMac&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Boot USB Disk, BIOS set to UEFI+Legacy mode.&lt;/li&gt;
+&lt;li&gt;Launch terminal from installer&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;sh /Volumes/SierraAMD/PostInstall/post.sh&lt;/code&gt;
+ The script will ask for your OSX volume, but volume name may not contains spaces. If your OSX volume name contains spaces, make soft link first&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;cd /Volumes/
+ ln -s OS\ X OSX&lt;/code&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Reboot, first time boot with USB.&lt;/li&gt;
+&lt;li&gt;Install CLOVER&lt;/li&gt;
+&lt;li&gt;Make kernel caches&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;sudo kextcache -system-prelinked-kernel
+ sudo kextcache -system-caches&lt;/code&gt;
+ Then you should be able to boot with clover&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;If you have monitor color blinking issue, install &lt;a href="http://resxtreme.com/"&gt;ResXtream&lt;/a&gt; and set 8-bits color &lt;/li&gt;
+&lt;li&gt;If your system clock runs too fast/slow, adjust &lt;a href="http://www.insanelymac.com/forum/topic/240542-guide-getting-your-busratio/"&gt;busratio&lt;/a&gt; in clover boot arg &lt;/li&gt;
+&lt;li&gt;I found there is a process assistantd keeps writing to my disk, stopping Siri does not help. Thus I disable the service directly&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;```
+ sudo vim /System/Library/LaunchAgents/com.apple.assistantd.plist&lt;/p&gt;
+&lt;p&gt;#change RunAtLoad to false and reboot
+ ```&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Other issue: playing video with VLC got crappy audio output. Use &lt;a href="https://mpv.io/"&gt;mpv&lt;/a&gt; or &lt;a href="http://brewformulas.org/Mplayer"&gt;mplayer&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><category term="osx"></category><category term="osx86"></category><category term="amd"></category></entry></feed>
