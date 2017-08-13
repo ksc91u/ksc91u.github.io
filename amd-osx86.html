@@ -66,35 +66,33 @@
   </header>
   <div class="content">
     <p>I migrate from and Intel system, here are my steps.</p>
-<ol>
+<ul>
 <li>Prepare usb disk with <a href="https://forum.amd-osx.com/viewtopic.php?f=24&amp;t=1213">TransMac</a></li>
 <li>Boot USB Disk, BIOS set to UEFI+Legacy mode.</li>
 <li>Launch terminal from installer</li>
-</ol>
-<p><code>sh /Volumes/SierraAMD/PostInstall/post.sh</code>
- The script will ask for your OSX volume, but volume name may not contains spaces. If your OSX volume name contains spaces, make soft link first</p>
+</ul>
+<p><code>sh /Volumes/SierraAMD/PostInstall/post.sh</code></p>
+<p>The script will ask for your OSX volume, but volume name may not contains spaces. If your OSX volume name contains spaces, make soft link first</p>
 <p><code>cd /Volumes/
  ln -s OS\ X OSX</code></p>
-<ol>
+<ul>
 <li>Reboot, first time boot with USB.</li>
 <li>Install CLOVER</li>
 <li>Make kernel caches</li>
-</ol>
+</ul>
 <p><code>sudo kextcache -system-prelinked-kernel
- sudo kextcache -system-caches</code>
- Then you should be able to boot with clover</p>
-<ol>
+ sudo kextcache -system-caches</code></p>
+<p>Then you should be able to boot with clover</p>
+<ul>
 <li>If you have monitor color blinking issue, install <a href="http://resxtreme.com/">ResXtream</a> and set 8-bits color </li>
 <li>If your system clock runs too fast/slow, adjust <a href="http://www.insanelymac.com/forum/topic/240542-guide-getting-your-busratio/">busratio</a> in clover boot arg </li>
 <li>I found there is a process assistantd keeps writing to my disk, stopping Siri does not help. Thus I disable the service directly</li>
-</ol>
-<p>```
- sudo vim /System/Library/LaunchAgents/com.apple.assistantd.plist</p>
-<p>#change RunAtLoad to false and reboot
- ```</p>
-<ol>
+</ul>
+<p><code>sudo vim /System/Library/LaunchAgents/com.apple.assistantd.plist</code></p>
+<p>change RunAtLoad to false and reboot </p>
+<ul>
 <li>Other issue: playing video with VLC got crappy audio output. Use <a href="https://mpv.io/">mpv</a> or <a href="http://brewformulas.org/Mplayer">mplayer</a></li>
-</ol>
+</ul>
   </div>
 </article>
 <hr>
