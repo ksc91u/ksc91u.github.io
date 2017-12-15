@@ -8,7 +8,7 @@ Authors: Me
 Summary: AMD OSX86 post install issues and fix
 
 
-I migrate from and Intel system, here are my steps.
+I migrate from an Intel system, here are my steps.
 
 * Prepare usb disk with [TransMac](https://forum.amd-osx.com/viewtopic.php?f=24&t=1213)
 * Boot USB Disk, BIOS set to UEFI+Legacy mode.
