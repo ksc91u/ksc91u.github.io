@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = '我'
-SITENAME = '我不會Java'
+AUTHOR = 'ksc91u'
+SITENAME = ' '
 SITEURL = ''
 THEME='./custom_theme/pelican-alchemy/alchemy'
 PATH = 'content'
@@ -21,9 +21,9 @@ AUTHOR_FEED_RSS = None
 DISQUS_SITENAME = u"ksc91u"
 
 # Blogroll
-LINKS = (('通通寫成一行', 'https://ingramchen.io'),
-         ('隨便聊天', 'https://kaif.io/'),
-	('用Pelican架個人Blog','http://blog.runsheng.xyz/shi-yong-pelicanda-jian-ji-yu-gitde-jing-tai-bo-ke.html'))
+#LINKS = (('通通寫成一行', 'https://ingramchen.io'),
+#         ('隨便聊天', 'https://kaif.io/'),
+#	('用Pelican架個人Blog','http://blog.runsheng.xyz/shi-yong-pelicanda-jian-ji-yu-gitde-jing-tai-bo-ke.html'))
 
 # Social widget
 SOCIAL = (('You can add links in your config file', '#'),
@@ -32,7 +32,7 @@ SOCIAL = (('You can add links in your config file', '#'),
 DEFAULT_PAGINATION = 10
 
 PLUGIN_PATHS = ['../pelican-plugins']
-PLUGINS = ['code_include', 'render_math']
+#PLUGINS = ['code_include', 'render_math']
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
