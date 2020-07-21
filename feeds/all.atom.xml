@@ -1,5 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>我不會Java</title><link href="https://ksc91u.github.io/" rel="alternate"></link><link href="https://ksc91u.github.io/feeds/all.atom.xml" rel="self"></link><id>https://ksc91u.github.io/</id><updated>2017-08-13T22:10:00+08:00</updated><entry><title>AMD OSX86 Post Install</title><link href="https://ksc91u.github.io/amd-osx86.html" rel="alternate"></link><published>2017-08-13T22:10:00+08:00</published><updated>2017-08-13T22:10:00+08:00</updated><author><name>Me</name></author><id>tag:ksc91u.github.io,2017-08-13:/amd-osx86.html</id><summary type="html">&lt;p&gt;AMD OSX86 post install issues and fix&lt;/p&gt;</summary><content type="html">&lt;p&gt;I migrate from and Intel system, here are my steps.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://ksc91u.github.io/" rel="alternate"></link><link href="https://ksc91u.github.io/feeds/all.atom.xml" rel="self"></link><id>https://ksc91u.github.io/</id><updated>2020-07-21T15:10:00+08:00</updated><entry><title>Turbo Boost Switcher, Free</title><link href="https://ksc91u.github.io/tb-free.html" rel="alternate"></link><published>2020-07-21T15:10:00+08:00</published><updated>2020-07-21T15:10:00+08:00</updated><author><name>Me</name></author><id>tag:ksc91u.github.io,2020-07-21:/tb-free.html</id><summary type="html">&lt;p&gt;disable turbo boost on os x, free&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Turbo Boost Switcher&lt;/h1&gt;
+&lt;h3&gt;Download from &lt;a href="https://github.com/rugarciap/Turbo-Boost-Switcher"&gt;GitHub&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Installed to /Application&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;user@localhost ~ $ ls -l /Applications/Turbo\ Boost\ Switcher.app/Contents/MacOS/Turbo\ Boost\ Switcher&lt;/span&gt;
+&lt;span class="err"&gt;-rwxr-xr-x@ 1 user  staff  141312 11 23  2019 /Applications/Turbo Boost Switcher.app/Contents/MacOS/Turbo Boost Switcher&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;Create launch script at &lt;code&gt;/Users/user/bin/turbo.sh&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;
+nohup &lt;span class="s2"&gt;&amp;quot;/Applications/Turbo Boost Switcher.app/Contents/MacOS/Turbo Boost Switcher&amp;quot;&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&amp;gt;/dev/null &lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;/dev/null &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Enable sudo without password for script &lt;code&gt;sudo visudo&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;user       ALL = (ALL) NOPASSWD:/Users/user/bin/turbo.sh&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Use Automator.app to create launch app to run script when login&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Search for Run Shell Script from library&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;/usr/bin/sudo /Users/user/bin/turbo.sh&lt;/code&gt;
+* Save app to &lt;code&gt;~/bin/turbo_disable.app&lt;/code&gt;
+* Add app to user Login Items
+* When Turbo Boost Switcher launch, check &lt;strong&gt;Disable TB at Launch&lt;/strong&gt; from menu. Done&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content><category term="osx"></category><category term="osx"></category><category term="turboboost"></category></entry><entry><title>AMD OSX86 Post Install</title><link href="https://ksc91u.github.io/amd-osx86.html" rel="alternate"></link><published>2017-08-13T22:10:00+08:00</published><updated>2017-08-13T22:10:00+08:00</updated><author><name>Me</name></author><id>tag:ksc91u.github.io,2017-08-13:/amd-osx86.html</id><summary type="html">&lt;p&gt;AMD OSX86 post install issues and fix&lt;/p&gt;</summary><content type="html">&lt;p&gt;I migrate from an Intel system, here are my steps.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Prepare usb disk with &lt;a href="https://forum.amd-osx.com/viewtopic.php?f=24&amp;amp;t=1213"&gt;TransMac&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Boot USB Disk, BIOS set to UEFI+Legacy mode.&lt;/li&gt;
@@ -26,11 +63,11 @@
 &lt;p&gt;change RunAtLoad to false and reboot &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Other issue: playing video with VLC got crappy audio output. Use &lt;a href="https://mpv.io/"&gt;mpv&lt;/a&gt; or &lt;a href="http://brewformulas.org/Mplayer"&gt;mplayer&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="osx"></category><category term="osx86"></category><category term="amd"></category></entry><entry><title>Universal Link Test</title><link href="https://ksc91u.github.io/ios-deep-link.html" rel="alternate"></link><published>2017-08-03T11:49:00+08:00</published><updated>2017-08-03T11:49:00+08:00</updated><author><name>Me</name></author><id>tag:ksc91u.github.io,2017-08-03:/ios-deep-link.html</id><summary type="html">&lt;p&gt;Universal Link&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://icook.tw/vip?ref=vip-cta-marketcoupon-show"&gt;點我開App 沒效, 沒 handle vip&lt;/a&gt;
+&lt;/ul&gt;</content><category term="osx"></category><category term="osx"></category><category term="osx86"></category><category term="amd"></category></entry><entry><title>Universal Link Test</title><link href="https://ksc91u.github.io/ios-deep-link.html" rel="alternate"></link><published>2017-08-03T11:49:00+08:00</published><updated>2017-08-03T11:49:00+08:00</updated><author><name>Me</name></author><id>tag:ksc91u.github.io,2017-08-03:/ios-deep-link.html</id><summary type="html">&lt;p&gt;Universal Link&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://icook.tw/vip?ref=vip-cta-marketcoupon-show"&gt;點我開App 沒效, 沒 handle vip&lt;/a&gt;
 &lt;br&gt;
 &lt;a href="https://icook.tw/vip?ref=coupon-show"&gt;點我開 App 沒效&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;
-&lt;a href="https://icook.tw/dishes/53758"&gt; Dish 應該可以 &lt;/a&gt;&lt;/p&gt;</content><category term="ios"></category></entry><entry><title>OneSky Sucks</title><link href="https://ksc91u.github.io/onesky.html" rel="alternate"></link><published>2017-07-21T13:00:00+08:00</published><updated>2017-07-21T13:00:00+08:00</updated><author><name>Me</name></author><id>tag:ksc91u.github.io,2017-07-21:/onesky.html</id><summary type="html">&lt;p&gt;OneSky CDATA 的一堆雷&lt;/p&gt;</summary><content type="html">&lt;p&gt;OneSky 真雷&lt;/p&gt;
+&lt;a href="https://icook.tw/dishes/53758"&gt; Dish 應該可以 &lt;/a&gt;&lt;/p&gt;</content><category term="icook"></category><category term="ios"></category></entry><entry><title>OneSky Sucks</title><link href="https://ksc91u.github.io/onesky.html" rel="alternate"></link><published>2017-07-21T13:00:00+08:00</published><updated>2017-07-21T13:00:00+08:00</updated><author><name>Me</name></author><id>tag:ksc91u.github.io,2017-07-21:/onesky.html</id><summary type="html">&lt;p&gt;OneSky CDATA 的一堆雷&lt;/p&gt;</summary><content type="html">&lt;p&gt;OneSky 真雷&lt;/p&gt;
 &lt;p&gt;上面的字串&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;font&lt;/span&gt; &lt;span class="na"&gt;color=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;#F06354&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;*&lt;span class="nt"&gt;&amp;lt;/font&amp;gt;&lt;/span&gt; 為必填欄位
 姓名 &lt;span class="nt"&gt;&amp;lt;font&lt;/span&gt; &lt;span class="na"&gt;color=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;#F06354&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;*&lt;span class="nt"&gt;&amp;lt;/font&amp;gt;&lt;/span&gt;
@@ -38,7 +75,7 @@
 
 
 &lt;p&gt;下載格式選Android Xml , 很聰明, 自動幫我加CDATA&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ni"&gt;&amp;amp;lt;&lt;/span&gt;font color=\&amp;quot;#F06354\&amp;quot;&lt;span class="ni"&gt;&amp;amp;gt;&lt;/span&gt;*&lt;span class="ni"&gt;&amp;amp;lt;&lt;/span&gt;/font&lt;span class="ni"&gt;&amp;amp;gt;&lt;/span&gt; 為必填欄位
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;font&lt;/span&gt; &lt;span class="na"&gt;color=&lt;/span&gt;&lt;span class="s"&gt;\&amp;quot;#F06354\&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;*&lt;span class="nt"&gt;&amp;lt;/font&amp;gt;&lt;/span&gt; 為必填欄位
 &lt;span class="cp"&gt;&amp;lt;![CDATA[姓名 &amp;lt;font color=&amp;quot;#F06354&amp;quot;&amp;gt;*&amp;lt;/font&amp;gt;]]&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -57,10 +94,10 @@
 &lt;li&gt;但是有的該加的不加&lt;/li&gt;
 &lt;li&gt;不該加的幫你加了 &lt;/li&gt;
 &lt;li&gt;錯了不會告訴你原因&lt;/li&gt;
-&lt;/ol&gt;</content><category term="onesky"></category></entry><entry><title>404</title><link href="https://ksc91u.github.io/404.html" rel="alternate"></link><published>2017-07-18T18:00:00+08:00</published><updated>2017-07-18T18:00:00+08:00</updated><author><name>Me</name></author><id>tag:ksc91u.github.io,2017-07-18:/404.html</id><summary type="html">&lt;p&gt;404 也是很正常的&lt;/p&gt;</summary><content type="html">&lt;p&gt;四零四(休止符)這裡沒有你要的網站(休止符)sorry呵哈哈哈&lt;/p&gt;
+&lt;/ol&gt;</content><category term="i18n"></category><category term="onesky"></category></entry><entry><title>404</title><link href="https://ksc91u.github.io/404.html" rel="alternate"></link><published>2017-07-18T18:00:00+08:00</published><updated>2017-07-18T18:00:00+08:00</updated><author><name>Me</name></author><id>tag:ksc91u.github.io,2017-07-18:/404.html</id><summary type="html">&lt;p&gt;404 也是很正常的&lt;/p&gt;</summary><content type="html">&lt;p&gt;四零四(休止符)這裡沒有你要的網站(休止符)sorry呵哈哈哈&lt;/p&gt;
 &lt;div class="entry-content"  itemprop="text"&gt;
 &lt;div id="dslc-theme-content"&gt;&lt;div id="dslc-theme-content-inner"&gt;&lt;p&gt;&lt;iframe src="https://demo.hiraku.tw/mjcount/#4_0_4_+00_here_haveno_you_haveto_de_website_+00_sorry_haha" width="0" height="0" frameborder="0"&gt;&lt;/iframe&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;</content><category term="404"></category></entry><entry><title>Pelican GitHub Pages</title><link href="https://ksc91u.github.io/my-super-post3.html" rel="alternate"></link><published>2017-07-18T10:40:00+08:00</published><updated>2017-07-18T10:40:00+08:00</updated><author><name>Me</name></author><id>tag:ksc91u.github.io,2017-07-18:/my-super-post3.html</id><summary type="html">&lt;p&gt;Publish blog with pelican on GitHub pages&lt;/p&gt;</summary><content type="html">&lt;p&gt;Pelican 的 make github 會把內容發布到 gh-pages 這個 branch。
+&lt;/div&gt;&lt;/div&gt;</content><category term="404"></category><category term="404"></category></entry><entry><title>Pelican GitHub Pages</title><link href="https://ksc91u.github.io/my-super-post3.html" rel="alternate"></link><published>2017-07-18T10:40:00+08:00</published><updated>2017-07-18T10:40:00+08:00</updated><author><name>Me</name></author><id>tag:ksc91u.github.io,2017-07-18:/my-super-post3.html</id><summary type="html">&lt;p&gt;Publish blog with pelican on GitHub pages&lt;/p&gt;</summary><content type="html">&lt;p&gt;Pelican 的 make github 會把內容發布到 gh-pages 這個 branch。
 但是 github 的個人 pages ( repo: username.github.io ) 會去找 master branch。&lt;/p&gt;
 &lt;p&gt;看&lt;a href="https://github.com/hexojs/hexo/issues/350"&gt;這裏&lt;/a&gt;的討論&lt;/p&gt;
 &lt;p&gt;project pages 才會去找 gh-pages branch, 這樣網址就要變成  https://username.github.io/username.github.io  神長！&lt;/p&gt;
@@ -72,4 +109,4 @@
 
 $e=mc^2$
 
-在找到解法之前先這樣。</content><category term="pelican"></category><category term="github pages"></category></entry></feed>
+在找到解法之前先這樣。</content><category term="pelican"></category><category term="pelican"></category><category term="github pages"></category></entry></feed>
