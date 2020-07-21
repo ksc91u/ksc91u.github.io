@@ -6,9 +6,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>  AMD OSX86 Post Install |  
+  <title>  Turbo Boost Switcher, Free |  
 </title>
-  <link rel="canonical" href="/amd-osx86.html">
+  <link rel="canonical" href="/tb-free.html">
 
 
   <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="/theme/css/theme.css">
 
   
-  <meta name="description" content="AMD OSX86 post install issues and fix">
+  <meta name="description" content="disable turbo boost on os x, free">
 
 
 </head>
@@ -34,15 +34,15 @@
 
   <div class="main">
     <div class="container">
-      <h1>  AMD OSX86 Post Install
+      <h1>  Turbo Boost Switcher, Free
 </h1>
       <hr>
   <article class="article">
     <header>
       <ul class="list-inline">
-        <li class="list-inline-item text-muted" title="2017-08-13T22:10:00+08:00">
+        <li class="list-inline-item text-muted" title="2020-07-21T15:10:00+08:00">
           <i class="fas fa-clock"></i>
-          日 13 8月 2017
+          二 21 7月 2020
         </li>
         <li class="list-inline-item">
           <i class="fas fa-folder-open"></i>
@@ -53,37 +53,55 @@
               <a href="/author/me.html">Me</a>          </li>
           <li class="list-inline-item">
             <i class="fas fa-tag"></i>
-              <a href="/tag/osx.html">#osx</a>,               <a href="/tag/osx86.html">#osx86</a>,               <a href="/tag/amd.html">#amd</a>          </li>
+              <a href="/tag/osx.html">#osx</a>,               <a href="/tag/turboboost.html">#turboboost</a>          </li>
       </ul>
     </header>
     <div class="content">
-      <p>I migrate from an Intel system, here are my steps.</p>
+      <h1>Turbo Boost Switcher</h1>
+<h3>Download from <a href="https://github.com/rugarciap/Turbo-Boost-Switcher">GitHub</a></h3>
 <ul>
-<li>Prepare usb disk with <a href="https://forum.amd-osx.com/viewtopic.php?f=24&amp;t=1213">TransMac</a></li>
-<li>Boot USB Disk, BIOS set to UEFI+Legacy mode.</li>
-<li>Launch terminal from installer</li>
+<li>Installed to /Application</li>
 </ul>
-<p><code>sh /Volumes/SierraAMD/PostInstall/post.sh</code></p>
-<p>The script will ask for your OSX volume, but volume name may not contains spaces. If your OSX volume name contains spaces, make soft link first</p>
-<p><code>cd /Volumes/
- ln -s OS\ X OSX</code></p>
+<div class="highlight"><pre><span></span><span class="err">user@localhost ~ $ ls -l /Applications/Turbo\ Boost\ Switcher.app/Contents/MacOS/Turbo\ Boost\ Switcher</span>
+<span class="err">-rwxr-xr-x@ 1 user  staff  141312 11 23  2019 /Applications/Turbo Boost Switcher.app/Contents/MacOS/Turbo Boost Switcher</span>
+</pre></div>
+
+
 <ul>
-<li>Reboot, first time boot with USB.</li>
-<li>Install CLOVER</li>
-<li>Make kernel caches</li>
+<li>Create launch script at <code>/Users/user/bin/turbo.sh</code></li>
 </ul>
-<p><code>sudo kextcache -system-prelinked-kernel
- sudo kextcache -system-caches</code></p>
-<p>Then you should be able to boot with clover</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+nohup <span class="s2">&quot;/Applications/Turbo Boost Switcher.app/Contents/MacOS/Turbo Boost Switcher&quot;</span> <span class="m">1</span>&gt;/dev/null <span class="m">2</span>&gt;/dev/null <span class="p">&amp;</span>
+</pre></div>
+</td></tr></table>
+
 <ul>
-<li>If you have monitor color blinking issue, install <a href="http://resxtreme.com/">ResXtream</a> and set 8-bits color </li>
-<li>If your system clock runs too fast/slow, adjust <a href="http://www.insanelymac.com/forum/topic/240542-guide-getting-your-busratio/">busratio</a> in clover boot arg </li>
-<li>I found there is a process assistantd keeps writing to my disk, stopping Siri does not help. Thus I disable the service directly</li>
+<li>Enable sudo without password for script <code>sudo visudo</code></li>
 </ul>
-<p><code>sudo vim /System/Library/LaunchAgents/com.apple.assistantd.plist</code></p>
-<p>change RunAtLoad to false and reboot </p>
+<div class="highlight"><pre><span></span><span class="err">user       ALL = (ALL) NOPASSWD:/Users/user/bin/turbo.sh</span>
+</pre></div>
+
+
 <ul>
-<li>Other issue: playing video with VLC got crappy audio output. Use <a href="https://mpv.io/">mpv</a> or <a href="http://brewformulas.org/Mplayer">mplayer</a></li>
+<li>
+<p>Use Automator.app to create launch app to run script when login</p>
+<ul>
+<li>Search for Run Shell Script from library</li>
+</ul>
+<p><code>/usr/bin/sudo /Users/user/bin/turbo.sh</code></p>
+<ul>
+<li>
+<p>Save app to <code>~/bin/turbo_disable.app</code></p>
+</li>
+<li>
+<p>Add app to user Login Items</p>
+</li>
+<li>
+<p>When Turbo Boost Switcher launch, check <strong>Disable TB at Launch</strong> from menu. Done</p>
+</li>
+</ul>
+</li>
 </ul>
     </div>
   </article>
@@ -91,8 +109,8 @@
   <div id="disqus_thread"></div>
   <script>
     var disqus_config = function() {
-      this.page.url = '/amd-osx86.html';
-      this.page.identifier = 'amd-osx86';
+      this.page.url = '/tb-free.html';
+      this.page.identifier = 'tb-free';
     };
     (function() {
       var d = document;
